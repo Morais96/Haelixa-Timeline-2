@@ -2,7 +2,7 @@
 :root {
   --primary: rgb(178, 235, 79);
   --dark-primary: rgba(178, 235, 79, 0.514);
-  --light-primary: rgb(197, 217, 161);
+  --light-primary: rgb(59, 60, 57);
   --text: #FFFFFF;
   --primary-text: #212121;
   --secondary-text: #757575;
@@ -10,11 +10,12 @@
 }
 
 section {
-  padding: 100px 0;
+  padding: 0 50px;
 }
 
 html, body {
   overflow-x: hidden;
+  margin: 0;
 }
 
 body {
@@ -202,5 +203,8 @@ blockquote {
     left: -15px;
     border-width: 10px 15px 10px 0;
     border-color: transparent #f5f5f5 transparent transparent;
+  }
+  section {
+    padding: 10px;
   }
 }
