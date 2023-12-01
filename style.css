@@ -7,22 +7,24 @@
   --primary-text: #212121;
   --secondary-text: #757575;
   --accent: #80bc00;
+  --image-border: 20px;
 }
 
 section {
-  padding: 50px 150px;
+  padding: 0 150px;
 }
 
 html, body {
   overflow-x: hidden;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Be Vietnam Pro';
   font-size: 15px;
   font-weight: 400;
-  background-color: #eee;
+  background-color: #ffffff;
 }
 
 h1 {
@@ -31,7 +33,18 @@ h1 {
   letter-spacing: 3px;
   font-weight: 400;
   text-align: center;
-  margin-top: 30px;
+  margin: 30px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+
+hr {
+  margin: 30px 0;
 }
 
 .timeline {
@@ -43,10 +56,19 @@ h1 {
   margin: 0;
   background: var(--secondary-text);
   width: 1px;
-  height: 96%;
+  height: 100%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.timeline-item:nth-child(6) {
+  margin-bottom: 0;
 }
 
 .timeline-item {
@@ -73,8 +95,7 @@ h1 {
 .timeline-content {
   position: relative;
   width: 45%;
-  padding: 10px 30px;
-  background: #f5f5f5;
+  background: #f3f3f3;
   border: var(--secondary-text) solid 1px;
 }
 
@@ -98,46 +119,17 @@ h1 {
   text-align: justify;
 }
 
-.timeline-card a {
-  margin-left: 20px;
-}
-
-.timeline-item:nth-child(1) .timeline-img-header {
-  background-size: cover;
-  background-image: url('harvest.jpg');
-}
-.timeline-item:nth-child(2) .timeline-img-header {
-  background-size: cover;
-  background-image: url('spinning.webp');
-}
-.timeline-item:nth-child(3) .timeline-img-header {
-  background-size: cover;
-  background-image: url('weaving.webp');
-}
-.timeline-item:nth-child(4) .timeline-img-header {
-  background-size: cover;
-  background-image: url('processing.webp');
-}
-.timeline-item:nth-child(5) .timeline-img-header {
-  background-size: cover;
-  background-image: url('stitching.jpg');
-}
-.timeline-item:nth-child(6) .timeline-img-header {
-  background-size: cover;
-  background-image: url('retail.webp');
-}
-
 .timeline-img-header {
-  height: 200px;
+  height: 50px;
   position: relative;
-  margin-bottom: 20px;
 }
 
 .timeline-img-header h2 {
-  color: var(--text);
+  color: var(--primary);
   position: absolute;
   bottom: 5px;
   left: 20px;
+  font-weight: 400;
 }
 
 blockquote {
@@ -152,7 +144,13 @@ blockquote {
   padding: 0 20px 10px 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
+  section {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .timeline::before {
     left: 50px;
   }
@@ -180,9 +178,79 @@ blockquote {
     top: 30px;
     left: -15px;
     border-width: 10px 15px 10px 0;
-    border-color: transparent #f5f5f5 transparent transparent;
+    border-color: transparent #ffffff transparent transparent;
   }
   section {
-    padding: 10px;
+    padding: 0 20px;
   }
+  .product, .product-details{
+    flex-direction: column;
+    max-height: none !important;
+  }
+  .description {
+    width: calc(100% - 40px) !important;
+    align-items: center !important;
+  }
+  .details {
+    width: calc(100% - 40px) !important;
+  }
+  .product img, .product-details img {
+    align-self: center;
+    max-width: 100% !important;
+  }
+}
+
+.product {
+  display: flex;
+  margin: 30px 0;
+  max-height: 500px;
+  justify-content: right;
+}
+
+.product img, .product-details img {
+  max-width: 50%;
+}
+
+.product img {
+  max-height: 500px;
+}
+
+.product-images {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+}
+
+.description {
+  padding: var(--image-border);
+  width: calc(50% - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.product-details {
+  display: flex;
+  text-align: justify;
+  border-bottom: solid 1px black;
+  border-top: solid 1px black;
+  margin: 30px 0;
+  max-height: 500px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 50%;
+  justify-content: center;
+}
+
+.timeline-header {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
 }
