@@ -43,5 +43,4 @@ $(function () {
       easing: "ease-in-out",
       duration: 800
     });
-  });
-  
+});
