@@ -3,11 +3,7 @@
   --primary: #80bc00;
   --dark-primary: rgba(178, 235, 79, 0.514);
   --light-primary: rgb(59, 60, 57);
-  --text: #FFFFFF;
-  --primary-text: #212121;
   --secondary-text: #757575;
-  --accent: #80bc00;
-  --image-border: 20px;
 }
 
 section {
@@ -143,13 +139,6 @@ a:hover {
   font-weight: 400;
 }
 
-blockquote {
-  margin-top: 30px;
-  color: var(--secondary-text);
-  border-left-color: var(--primary);
-  padding: 0 20px;
-}
-
 .date {
   color: var(--primary);
   padding: 0 20px 10px 20px;
@@ -159,9 +148,15 @@ blockquote {
   section {
     padding: 0 50px;
   }
+  .map img {
+    width: calc(100% - 100px) !important;
+  }
 }
 
 @media screen and (max-width: 700px) {
+  body {
+    font-size: 0.67rem;
+  }
   .timeline::before {
     left: 50px;
   }
@@ -180,17 +175,6 @@ blockquote {
     float: none;
   }
 
-  .timeline-item:nth-child(odd) .timeline-content::after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    width: 0;
-    height: 0;
-    top: 30px;
-    left: -15px;
-    border-width: 10px 15px 10px 0;
-    border-color: transparent #ffffff transparent transparent;
-  }
   section {
     padding: 0 20px;
   }
@@ -208,6 +192,9 @@ blockquote {
   .product img, .product-details img {
     align-self: center;
     max-width: 100% !important;
+  }
+  .map img {
+    width: calc(100% - 40px) !important;
   }
 }
 
@@ -265,4 +252,15 @@ blockquote {
   padding: 30px 20px;
   justify-content: center;
   text-align: justify;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.map img {
+  width: calc(100% - 300px);
 }
